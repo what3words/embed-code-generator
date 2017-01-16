@@ -1,0 +1,250 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>what3words : 3 word address font</title>
+    <meta name="description" content="How to display a 3 word address with what3words font?">
+    <meta name="author" content="Arnaud Ferrand">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css" />
+    <script type="text/javascript">
+        if (window.location.href.indexOf("http") != -1) {
+            document.write("<link rel='stylesheet' type='text/css' href='https://assets.what3words.com/css/w3w-glyphicon.css' />");
+        } else {
+            document.write("<link rel='stylesheet' type='text/css' href='css/styles.css' />");
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+            <div class="page-header">
+                <div class="w3w-embed w3w-large">
+                    <style type="text/css">
+                    @import url("https://assets.what3words.com/css/w3w-glyphicon.css");
+                    </style>
+                    <div class="w3w-address">
+                        <i class="w3w-logo w3w-red"></i>w3w address - embed code generator
+                    </div>
+                </div>
+            </div>
+            <form action="" id="embed-generator">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <legend>Color</legend>
+                            <div class="radio">
+                            <label>
+                                <input id="color-red" type="radio" name="color" value="w3w-red" checked> Red
+                            </label>
+                            </div>
+                            <div class="radio">
+                            <label>
+                                <input id="color-blue" type="radio" name="color" value="w3w-dark-blue"> Blue
+                            </label>
+                            </div>
+                            <div class="radio">
+                            <label>
+                                <input id="color-white" type="radio" name="color" value="w3w-white"> White
+                            </label>
+                            </div>
+                            <div class="radio">
+                                or Pick a color: <input class="jscolor" onchange="color_update(this.jscolor)" value="FFC74D">
+                            </div>
+                        </td>
+                        <td>
+                            <legend>Size</legend>
+                            <div class="radio">
+                            <label>
+                                <input id="size-small" type="radio" name="size" value="w3w-small" checked> Small
+                            </label>
+                            </div>
+                            <div class="radio">
+                            <label>
+                                <input id="size-medium" type="radio" name="size" value="w3w-medium"> Medium
+                            </label>
+                            </div>
+                            <div class="radio">
+                            <label>
+                                <input id="size-large" type="radio" name="size" value="w3w-large"> Large
+                            </label>
+                            </div>
+                        </td>
+                        <td>
+                            <legend>Version</legend>
+                            <div class="radio">
+                            <label>
+                                <input id="version-dark" type="radio" name="version" value="" checked> Dark background
+                            </label>
+                            </div>
+                            <div class="radio">
+                            <label>
+                                <input id="version-light" type="radio" name="version" value="w3w-light"> Light background
+                            </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="form-group form-inline">
+                            <label for="w3a">Your w3w address</label>
+                            <input class="form-control" type="text" id="w3a" value="daring.lion.race">
+                            <button id="change-w3a" type="submit" class="btn btn-default">Change</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <div class="panel">
+                <div id="embed-code">
+
+                    <div class="generated">
+                        <div class="w3w-embed w3w-small">
+                            <style type="text/css">
+                            @import url("https://assets.what3words.com/css/w3w-glyphicon.css");
+                            </style>
+                            <div class="w3w-address">
+                                <i class="w3w-logo w3w-red"></i><span class="addr">daring.lion.race</span>
+                            </div>
+                            <div class="w3w-popup">
+                                <div class="w3w-popup-inner">
+                                    what3words gives every 3m x 3m in the world a unique 3 word address. This one describes the precise entrance of the hostel. <a href="http://what3words.com/about/" target="_blank">Click here to learn more.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <pre class="copytoclipboard"><code class="language-markup">&#x3C;div class=&#x22;w3w-embed w3w-small&#x22;&#x3E; &#x3C;style type=&#x22;text/css&#x22;&#x3E; @import url(&#x22;https://assets.what3words.com/css/w3w-glyphicon.css&#x22;); &#x3C;/style&#x3E; &#x3C;div class=&#x22;w3w-address&#x22;&#x3E; &#x3C;i class=&#x22;w3w-logo w3w-red&#x22;&#x3E;&#x3C;/i&#x3E;daring.lion.race &#x3C;/div&#x3E;&#x3C;div class=&#x22;w3w-popup&#x22;&#x3E; &#x3C;div class=&#x22;w3w-popup-inner&#x22;&#x3E; what3words gives every 3m x 3m in the world a unique 3 word address. This one describes the precise entrance of the hostel. &#x3C;a href=&#x22;http://what3words.com/about/&#x22; target=&#x22;_blank&#x22;&#x3E;Click here to learn more.&#x3C;/a&#x3E; &#x3C;/div&#x3E;&#x3C;/div&#x3E;&#x3C;/div&#x3E;</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div id="test"></div>
+
+    </div>
+    <!-- ./container -->
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.16/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.min.js"></script>
+    <script>
+        $(function() {
+            $('[data-toggle="popover"]').popover()
+        });
+       /* Prism copy to clipbaord for all pre with copytoclipboard class */
+        $('pre.copytoclipboard').each(function () {
+            $this = $(this);
+            $button = $('<button>Copy</button>');
+            $this.wrap('<div/>').removeClass('copytoclipboard');
+            $wrapper = $this.parent();
+            $wrapper.addClass('copytoclipboard-wrapper').css({position: 'relative'})
+            $button.css({position: 'absolute', top: 10, right: 10}).appendTo($wrapper).addClass('copytoclipboard btn btn-default');
+            /* */
+            var copyCode = new Clipboard('button.copytoclipboard', {
+                target: function (trigger) {
+                    return trigger.previousElementSibling;
+                }
+            });
+            copyCode.on('success', function (event) {
+                event.clearSelection();
+                event.trigger.textContent = 'Copied';
+                window.setTimeout(function () {
+                    event.trigger.textContent = 'Copy';
+                }, 2000);
+            });
+            copyCode.on('error', function (event) {
+                event.trigger.textContent = 'Press "Ctrl + C" to copy';
+                window.setTimeout(function () {
+                    event.trigger.textContent = 'Copy';
+                }, 2000);
+            });
+        });
+
+        //init generator if has element
+        if ($('#embed-generator').length) {
+
+            var embed_code = $('#embed-code');
+
+            var entityMap = {
+              '&': '&amp;',
+              '<': '&lt;',
+              '>': '&gt;',
+              '"': '&quot;',
+              "'": '&#39;',
+              '/': '&#x2F;',
+              '`': '&#x60;',
+              '=': '&#x3D;'
+            };
+
+            function escapeHtml (string) {
+              return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+                return entityMap[s];
+              });
+            }
+
+            function codeChange() {
+                var html = $('.generated', embed_code).html().toString();
+                var minified = html.replace(/\n\s+|\n/g, "");
+                $('code.language-markup').text(minified);
+                Prism.highlightAll();
+            }
+
+            //color
+            $('input[name=color]').on('click', function() {
+                var _self = $(this),
+                    value = _self.val();
+                $('.w3w-logo', embed_code).attr('class', 'w3w-logo').addClass(value).attr('style', '');
+                codeChange();
+            });
+
+            //size
+            $('input[name=size]').on('click', function() {
+                var _self = $(this),
+                    value = _self.val();
+                $('.w3w-embed', embed_code).removeClass('w3w-small w3w-medium w3w-large').addClass(value);
+                codeChange();
+            });
+
+            //version
+            $('input[name=version]').on('click', function() {
+                var _self = $(this),
+                    value = _self.val();
+                $('.w3w-embed', embed_code).removeClass('w3w-light');
+                $('.w3w-embed', embed_code).toggleClass(value);
+                if (value != '') {
+                    embed_code.parent().addClass('dark');
+                } else {
+                    embed_code.parent().removeClass('dark');
+                }
+                codeChange();
+            });
+
+            $('#change-w3a').on('click', function(event) {
+                event.preventDefault();
+                $('.addr', embed_code).text($('#w3a').val());
+
+                codeChange();
+            });
+
+            function color_update(jscolor) {
+                // 'jscolor' instance can be used as a string
+                $('.w3w-logo', embed_code).css('color', '#' + jscolor );
+
+                codeChange();
+            }
+        }
+
+    </script>
+</body>
+
+</html>
