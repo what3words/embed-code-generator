@@ -33,7 +33,8 @@ $('pre.copytoclipboard').each(function() {
 //init generator if has element
 if ($('#embed-generator').length) {
 
-    var embed_code = $('#embed-code');
+    var embed_code = $('#embed-code'),
+        popup;
 
 
     // convert to HTML entity functions
@@ -55,7 +56,7 @@ if ($('#embed-generator').length) {
     }
 
     // Regenerate embed code and Re-init Prism.js
-    function codeChange() {
+    function generateCode() {
         var html = $('.generated', embed_code).html().toString();
         var minified = html.replace(/\n\s+|\n/g, "");
         $('code.language-markup').text(minified);
@@ -67,7 +68,13 @@ if ($('#embed-generator').length) {
         var _self = $(this),
             value = _self.val();
         $('.w3w-logo', embed_code).attr('class', 'w3w-logo').addClass(value).attr('style', '');
-        codeChange();
+
+        if (value == 'colorpicker') {
+            $('.jscolor-hider').slideDown('300');
+        } else {
+            $('.jscolor-hider').slideUp('300');
+        }
+        generateCode();
     });
 
     //Size change
@@ -75,7 +82,7 @@ if ($('#embed-generator').length) {
         var _self = $(this),
             value = _self.val();
         $('.w3w-embed', embed_code).removeClass('w3w-small w3w-medium w3w-large').addClass(value);
-        codeChange();
+        generateCode();
     });
 
     //Version change
@@ -85,19 +92,22 @@ if ($('#embed-generator').length) {
         $('.w3w-embed', embed_code).removeClass('w3w-light');
         $('.w3w-embed', embed_code).toggleClass(value);
         if (value != '') {
-            embed_code.parent().addClass('dark');
+            embed_code.closest('.panel').addClass('dark');
         } else {
-            embed_code.parent().removeClass('dark');
+            embed_code.closest('.panel').removeClass('dark');
         }
-        codeChange();
+        generateCode();
     });
 
     // Address Changer
     $('#change-w3a').on('click', function(event) {
         event.preventDefault();
         $('.addr', embed_code).text($('#w3a').val());
+        if ($('#maplink').is(':checked')) {
+            $('a', embed_code).attr("href", "https://map.what3words.com/" + $('#w3a').val());
+        }
 
-        codeChange();
+        generateCode();
     });
 
     //color picker
@@ -105,6 +115,20 @@ if ($('#embed-generator').length) {
         // 'jscolor' instance can be used as a string
         $('.w3w-logo', embed_code).css('color', '#' + jscolor);
 
-        codeChange();
+        generateCode();
     }
+
+    //Links
+    $('#maplink').change(function(){
+        var address = $('.w3w-embed .addr', embed_code).text();
+        if (this.checked) {
+            $('.w3w-embed', embed_code).wrap( "<a href='https://map.what3words.com/" + address + "' target='_blank'></a>" );
+            popup = $('.w3w-embed .w3w-popup', embed_code).detach();
+            generateCode();
+        } else {
+            $('.w3w-embed', embed_code).unwrap();
+            popup.appendTo('.w3w-embed', embed_code);
+            generateCode();
+        }
+    });
 }
