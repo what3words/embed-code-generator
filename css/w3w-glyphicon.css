@@ -223,3 +223,7 @@
 .panel.dark h3, .panel.dark h4 {
     color: #FFF;
 }
+
+.jscolor-hider {
+    display: none;
+}

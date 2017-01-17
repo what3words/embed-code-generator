@@ -67,6 +67,12 @@ if ($('#embed-generator').length) {
         var _self = $(this),
             value = _self.val();
         $('.w3w-logo', embed_code).attr('class', 'w3w-logo').addClass(value).attr('style', '');
+
+        if (value == 'colorpicker') {
+            $('.jscolor-hider').slideDown('300');
+        } else {
+            $('.jscolor-hider').slideUp('300');
+        }
         codeChange();
     });
 
