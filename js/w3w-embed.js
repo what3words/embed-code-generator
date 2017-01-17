@@ -113,4 +113,19 @@ if ($('#embed-generator').length) {
 
         codeChange();
     }
+
+    //Links
+    $('#maplink').change(function(){
+        var address = $('.w3w-embed .addr', embed_code).text();
+        console.log(address);
+        if (this.checked) {
+            $('.w3w-embed', embed_code).wrap( "<a href='https://map.what3words.com/" + address + "' target='_blank'></a>" );
+            codeChange();
+        } else {
+            $('.w3w-embed', embed_code).unwrap();
+            codeChange();
+        }
+
+
+    });
 }

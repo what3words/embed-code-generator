@@ -12,8 +12,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css" />
-    <!-- <link rel='stylesheet' type='text/css' href='css/w3w-glyphicon.css' /> -->
-    <link rel='stylesheet' type='text/css' href='https://assets.what3words.com/css/w3w-glyphicon.css' />
+    <link rel='stylesheet' type='text/css' href='css/w3w-glyphicon.css' />
+    <!-- <link rel='stylesheet' type='text/css' href='https://assets.what3words.com/css/w3w-glyphicon.css' /> -->
 </head>
 
 <body>
@@ -93,10 +93,18 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="3" class="form-group form-inline">
-                            <label for="w3a">Your w3w address</label>
+                        <td class="form-group form-inline">
+                            <legend>Your w3w address</legend>
                             <input class="form-control" type="text" id="w3a" value="daring.lion.race">
                             <button id="change-w3a" type="submit" class="btn btn-default">Change</button>
+                        </td>
+                        <td>
+                            <legend>Links</legend>
+                            <div class="radio">
+                                <label>
+                                    <input id="maplink" type="checkbox" name="version" value=""> Link to mapsite?
+                                </label>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -121,7 +129,7 @@
                         </div>
                     </div>
 
-                    <pre class="copytoclipboard"><code class="language-markup">&#x3C;div class=&#x22;w3w-embed w3w-small&#x22;&#x3E; &#x3C;style type=&#x22;text/css&#x22;&#x3E; @import url(&#x22;https://assets.what3words.com/css/w3w-glyphicon.css&#x22;); &#x3C;/style&#x3E; &#x3C;div class=&#x22;w3w-address&#x22;&#x3E; &#x3C;i class=&#x22;w3w-logo w3w-red&#x22;&#x3E;&#x3C;/i&#x3E;daring.lion.race &#x3C;/div&#x3E;&#x3C;div class=&#x22;w3w-popup&#x22;&#x3E; &#x3C;div class=&#x22;w3w-popup-inner&#x22;&#x3E; what3words gives every 3m x 3m in the world a unique 3 word address. This one describes the precise entrance of the hostel. &#x3C;a href=&#x22;http://what3words.com/about/&#x22; target=&#x22;_blank&#x22;&#x3E;Click here to learn more.&#x3C;/a&#x3E; &#x3C;/div&#x3E;&#x3C;/div&#x3E;&#x3C;/div&#x3E;</code></pre>
+                    <pre class="copytoclipboard"><code class="language-markup">&#x3C;div class=&#x22;w3w-embed w3w-small&#x22;&#x3E;&#x3C;style type=&#x22;text/css&#x22;&#x3E;@import url(&#x22;https://assets.what3words.com/css/w3w-glyphicon.css&#x22;); &#x3C;/style&#x3E; &#x3C;div class=&#x22;w3w-address&#x22;&#x3E; &#x3C;i class=&#x22;w3w-logo w3w-red&#x22;&#x3E;&#x3C;/i&#x3E;daring.lion.race &#x3C;/div&#x3E;&#x3C;div class=&#x22;w3w-popup&#x22;&#x3E; &#x3C;div class=&#x22;w3w-popup-inner&#x22;&#x3E; what3words gives every 3m x 3m in the world a unique 3 word address. This one describes the precise entrance of the hostel. &#x3C;a href=&#x22;http://what3words.com/about/&#x22; target=&#x22;_blank&#x22;&#x3E;Click here to learn more.&#x3C;/a&#x3E; &#x3C;/div&#x3E;&#x3C;/div&#x3E;&#x3C;/div&#x3E;</code></pre>
                 </div>
             </div>
         </div>
@@ -136,8 +144,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.16/clipboard.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.min.js"></script>
-    <!-- <script src="js/w3w-embed.js"></script> -->
-    <script src="https://assets.what3words.com/js/w3w-embed.js"></script>
+    <script src="js/w3w-embed.js"></script>
+    <!-- <script src="https://assets.what3words.com/js/w3w-embed.js"></script> -->
 
 </body>
 
