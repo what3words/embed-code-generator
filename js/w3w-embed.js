@@ -35,6 +35,8 @@ if ($('#embed-generator').length) {
 
     var embed_code = $('#embed-code');
 
+
+    // convert to HTML entity functions
     var entityMap = {
         '&': '&amp;',
         '<': '&lt;',
@@ -52,6 +54,7 @@ if ($('#embed-generator').length) {
         });
     }
 
+    // Regenerate embed code and Re-init Prism.js
     function codeChange() {
         var html = $('.generated', embed_code).html().toString();
         var minified = html.replace(/\n\s+|\n/g, "");
@@ -59,7 +62,7 @@ if ($('#embed-generator').length) {
         Prism.highlightAll();
     }
 
-    //color
+    //Color Change
     $('input[name=color]').on('click', function() {
         var _self = $(this),
             value = _self.val();
@@ -67,7 +70,7 @@ if ($('#embed-generator').length) {
         codeChange();
     });
 
-    //size
+    //Size change
     $('input[name=size]').on('click', function() {
         var _self = $(this),
             value = _self.val();
@@ -75,7 +78,7 @@ if ($('#embed-generator').length) {
         codeChange();
     });
 
-    //version
+    //Version change
     $('input[name=version]').on('click', function() {
         var _self = $(this),
             value = _self.val();
