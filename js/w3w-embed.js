@@ -33,7 +33,8 @@ $('pre.copytoclipboard').each(function() {
 //init generator if has element
 if ($('#embed-generator').length) {
 
-    var embed_code = $('#embed-code');
+    var embed_code = $('#embed-code'),
+        popup;
 
 
     // convert to HTML entity functions
@@ -102,6 +103,9 @@ if ($('#embed-generator').length) {
     $('#change-w3a').on('click', function(event) {
         event.preventDefault();
         $('.addr', embed_code).text($('#w3a').val());
+        if ($('#maplink').is(':checked')) {
+            $('a', embed_code).attr("href", "https://map.what3words.com/" + $('#w3a').val());
+        }
 
         generateCode();
     });
@@ -117,15 +121,14 @@ if ($('#embed-generator').length) {
     //Links
     $('#maplink').change(function(){
         var address = $('.w3w-embed .addr', embed_code).text();
-        console.log(address);
         if (this.checked) {
             $('.w3w-embed', embed_code).wrap( "<a href='https://map.what3words.com/" + address + "' target='_blank'></a>" );
+            popup = $('.w3w-embed .w3w-popup', embed_code).detach();
             generateCode();
         } else {
             $('.w3w-embed', embed_code).unwrap();
+            popup.appendTo('.w3w-embed', embed_code);
             generateCode();
         }
-
-
     });
 }
