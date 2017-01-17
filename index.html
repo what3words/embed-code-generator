@@ -30,111 +30,120 @@
                     </div>
                 </div>
             </div>
-            <form action="" id="embed-generator">
-                <table class="table">
-                    <tr>
-                        <td>
-                            <legend>Color</legend>
-                            <div class="radio">
-                            <label>
-                                <input id="color-red" type="radio" name="color" value="w3w-red" checked> Red
-                            </label>
-                            </div>
-                            <div class="radio">
-                            <label>
-                                <input id="color-blue" type="radio" name="color" value="w3w-dark-blue"> Blue
-                            </label>
-                            </div>
-                            <div class="radio">
-                            <label>
-                                <input id="color-white" type="radio" name="color" value="w3w-white"> White
-                            </label>
-                            </div>
-                            <div class="radio">
-                            <label>
-                                <input id="color-white" type="radio" name="color" value="colorpicker"> or Pick a color
-                                <div class="jscolor-hider">
-                                    <input class="jscolor" onchange="color_update(this.jscolor)" value="FFC74D" disabled>
+            <div class="panel panel-default">
+                  <div class="panel-body">
+                    <form action="" id="embed-generator">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <legend>Color</legend>
+                                    <div class="radio">
+                                    <label>
+                                        <input id="color-red" type="radio" name="color" value="w3w-red" checked> Red
+                                    </label>
+                                    </div>
+                                    <div class="radio">
+                                    <label>
+                                        <input id="color-blue" type="radio" name="color" value="w3w-dark-blue"> Blue
+                                    </label>
+                                    </div>
+                                    <div class="radio">
+                                    <label>
+                                        <input id="color-white" type="radio" name="color" value="w3w-white"> White
+                                    </label>
+                                    </div>
+                                    <div class="radio">
+                                    <label>
+                                        <input id="color-white" type="radio" name="color" value="colorpicker"> or Pick a color
+                                        <div class="jscolor-hider">
+                                            <input class="jscolor" onchange="color_update(this.jscolor)" value="FFC74D" disabled>
+                                        </div>
+                                    </label>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <legend>Size</legend>
+                                    <div class="radio">
+                                    <label>
+                                        <input id="size-small" type="radio" name="size" value="w3w-small" checked> Small
+                                    </label>
+                                    </div>
+                                    <div class="radio">
+                                    <label>
+                                        <input id="size-medium" type="radio" name="size" value="w3w-medium"> Medium
+                                    </label>
+                                    </div>
+                                    <div class="radio">
+                                    <label>
+                                        <input id="size-large" type="radio" name="size" value="w3w-large"> Large
+                                    </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <legend>Version</legend>
+                                    <div class="radio">
+                                    <label>
+                                        <input id="version-dark" type="radio" name="version" value="" checked> Dark background
+                                    </label>
+                                    </div>
+                                    <div class="radio">
+                                    <label>
+                                        <input id="version-light" type="radio" name="version" value="w3w-light"> Light background
+                                    </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="form-group form-inline">
+                                    <legend>Your w3w address</legend>
+                                    <input class="form-control" type="text" id="w3a" value="daring.lion.race">
+                                    <button id="change-w3a" type="submit" class="btn btn-default">Change</button>
+                                </td>
+                                <td>
+                                    <legend>Links</legend>
+                                    <div class="radio">
+                                        <label>
+                                            <input id="maplink" type="checkbox" value=""> Link to mapsite?
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                  </div>
+            </div>
+
+            <div class="panel panel-default">
+                  <div class="panel-body">
+
+                        <div id="embed-code">
+
+                            <div class="generated">
+                                <div class="w3w-embed w3w-small">
+                                    <style type="text/css">
+                                    @import url("https://assets.what3words.com/css/w3w-glyphicon.css");
+                                    </style>
+                                    <div class="w3w-address">
+                                        <i class="w3w-logo w3w-red"></i><span class="addr">daring.lion.race</span>
+                                    </div>
+                                    <div class="w3w-popup">
+                                        <div class="w3w-popup-inner">
+                                            what3words gives every 3m x 3m in the world a unique 3 word address. This one describes the precise entrance of the hostel. <a href="http://what3words.com/about/" target="_blank">Click here to learn more.</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </label>
+                            </div>
 
-                            </div>
-                        </td>
-                        <td>
-                            <legend>Size</legend>
-                            <div class="radio">
-                            <label>
-                                <input id="size-small" type="radio" name="size" value="w3w-small" checked> Small
-                            </label>
-                            </div>
-                            <div class="radio">
-                            <label>
-                                <input id="size-medium" type="radio" name="size" value="w3w-medium"> Medium
-                            </label>
-                            </div>
-                            <div class="radio">
-                            <label>
-                                <input id="size-large" type="radio" name="size" value="w3w-large"> Large
-                            </label>
-                            </div>
-                        </td>
-                        <td>
-                            <legend>Version</legend>
-                            <div class="radio">
-                            <label>
-                                <input id="version-dark" type="radio" name="version" value="" checked> Dark background
-                            </label>
-                            </div>
-                            <div class="radio">
-                            <label>
-                                <input id="version-light" type="radio" name="version" value="w3w-light"> Light background
-                            </label>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="form-group form-inline">
-                            <legend>Your w3w address</legend>
-                            <input class="form-control" type="text" id="w3a" value="daring.lion.race">
-                            <button id="change-w3a" type="submit" class="btn btn-default">Change</button>
-                        </td>
-                        <td>
-                            <legend>Links</legend>
-                            <div class="radio">
-                                <label>
-                                    <input id="maplink" type="checkbox" name="version" value=""> Link to mapsite?
-                                </label>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-
-            <div class="panel">
-                <div id="embed-code">
-
-                    <div class="generated">
-                        <div class="w3w-embed w3w-small">
-                            <style type="text/css">
-                            @import url("https://assets.what3words.com/css/w3w-glyphicon.css");
-                            </style>
-                            <div class="w3w-address">
-                                <i class="w3w-logo w3w-red"></i><span class="addr">daring.lion.race</span>
-                            </div>
-                            <div class="w3w-popup">
-                                <div class="w3w-popup-inner">
-                                    what3words gives every 3m x 3m in the world a unique 3 word address. This one describes the precise entrance of the hostel. <a href="http://what3words.com/about/" target="_blank">Click here to learn more.</a>
-                                </div>
-                            </div>
+                            <pre class="copytoclipboard"><code class="language-markup">&#x3C;div class=&#x22;w3w-embed w3w-small&#x22;&#x3E;&#x3C;style type=&#x22;text/css&#x22;&#x3E;@import url(&#x22;https://assets.what3words.com/css/w3w-glyphicon.css&#x22;); &#x3C;/style&#x3E; &#x3C;div class=&#x22;w3w-address&#x22;&#x3E; &#x3C;i class=&#x22;w3w-logo w3w-red&#x22;&#x3E;&#x3C;/i&#x3E;daring.lion.race &#x3C;/div&#x3E;&#x3C;div class=&#x22;w3w-popup&#x22;&#x3E; &#x3C;div class=&#x22;w3w-popup-inner&#x22;&#x3E; what3words gives every 3m x 3m in the world a unique 3 word address. This one describes the precise entrance of the hostel. &#x3C;a href=&#x22;http://what3words.com/about/&#x22; target=&#x22;_blank&#x22;&#x3E;Click here to learn more.&#x3C;/a&#x3E; &#x3C;/div&#x3E;&#x3C;/div&#x3E;&#x3C;/div&#x3E;</code></pre>
                         </div>
-                    </div>
-
-                    <pre class="copytoclipboard"><code class="language-markup">&#x3C;div class=&#x22;w3w-embed w3w-small&#x22;&#x3E;&#x3C;style type=&#x22;text/css&#x22;&#x3E;@import url(&#x22;https://assets.what3words.com/css/w3w-glyphicon.css&#x22;); &#x3C;/style&#x3E; &#x3C;div class=&#x22;w3w-address&#x22;&#x3E; &#x3C;i class=&#x22;w3w-logo w3w-red&#x22;&#x3E;&#x3C;/i&#x3E;daring.lion.race &#x3C;/div&#x3E;&#x3C;div class=&#x22;w3w-popup&#x22;&#x3E; &#x3C;div class=&#x22;w3w-popup-inner&#x22;&#x3E; what3words gives every 3m x 3m in the world a unique 3 word address. This one describes the precise entrance of the hostel. &#x3C;a href=&#x22;http://what3words.com/about/&#x22; target=&#x22;_blank&#x22;&#x3E;Click here to learn more.&#x3C;/a&#x3E; &#x3C;/div&#x3E;&#x3C;/div&#x3E;&#x3C;/div&#x3E;</code></pre>
-                </div>
+            </div>
+        </div>
             </div>
         </div>
 
-        <div id="test"></div>
+
 
     </div>
     <!-- ./container -->

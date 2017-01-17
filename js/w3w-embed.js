@@ -55,7 +55,7 @@ if ($('#embed-generator').length) {
     }
 
     // Regenerate embed code and Re-init Prism.js
-    function codeChange() {
+    function generateCode() {
         var html = $('.generated', embed_code).html().toString();
         var minified = html.replace(/\n\s+|\n/g, "");
         $('code.language-markup').text(minified);
@@ -73,7 +73,7 @@ if ($('#embed-generator').length) {
         } else {
             $('.jscolor-hider').slideUp('300');
         }
-        codeChange();
+        generateCode();
     });
 
     //Size change
@@ -81,7 +81,7 @@ if ($('#embed-generator').length) {
         var _self = $(this),
             value = _self.val();
         $('.w3w-embed', embed_code).removeClass('w3w-small w3w-medium w3w-large').addClass(value);
-        codeChange();
+        generateCode();
     });
 
     //Version change
@@ -91,11 +91,11 @@ if ($('#embed-generator').length) {
         $('.w3w-embed', embed_code).removeClass('w3w-light');
         $('.w3w-embed', embed_code).toggleClass(value);
         if (value != '') {
-            embed_code.parent().addClass('dark');
+            embed_code.closest('.panel').addClass('dark');
         } else {
-            embed_code.parent().removeClass('dark');
+            embed_code.closest('.panel').removeClass('dark');
         }
-        codeChange();
+        generateCode();
     });
 
     // Address Changer
@@ -103,7 +103,7 @@ if ($('#embed-generator').length) {
         event.preventDefault();
         $('.addr', embed_code).text($('#w3a').val());
 
-        codeChange();
+        generateCode();
     });
 
     //color picker
@@ -111,7 +111,7 @@ if ($('#embed-generator').length) {
         // 'jscolor' instance can be used as a string
         $('.w3w-logo', embed_code).css('color', '#' + jscolor);
 
-        codeChange();
+        generateCode();
     }
 
     //Links
@@ -120,10 +120,10 @@ if ($('#embed-generator').length) {
         console.log(address);
         if (this.checked) {
             $('.w3w-embed', embed_code).wrap( "<a href='https://map.what3words.com/" + address + "' target='_blank'></a>" );
-            codeChange();
+            generateCode();
         } else {
             $('.w3w-embed', embed_code).unwrap();
-            codeChange();
+            generateCode();
         }
 
 
