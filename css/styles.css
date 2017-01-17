@@ -101,8 +101,8 @@
 
 
 .w3w-embed:hover .w3w-popup a {
-    color: #FFF;
-    text-decoration: underline;
+    color: #FFF !important;
+    text-decoration: underline !important;
 }
 
 .w3w-embed .w3w-address {
@@ -160,6 +160,7 @@
 .w3w-embed.w3w-large:hover .w3w-popup {
     bottom: 35px;
 }
+
 
 
 /* light */
