@@ -131,4 +131,17 @@ if ($('#embed-generator').length) {
             generateCode();
         }
     });
+
+    // Disable popup
+
+    $('#disable-popup').change(function(event) {
+        if (this.checked) {
+            popup = $('.w3w-embed .w3w-popup', embed_code).detach();
+            generateCode();
+        } else {
+            popup.appendTo('.w3w-embed', embed_code);
+            generateCode();
+        }
+    });
+
 }
