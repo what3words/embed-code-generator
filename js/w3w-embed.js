@@ -67,7 +67,8 @@ if ($('#embed-generator').length) {
     $('input[name=color]').on('click', function() {
         var _self = $(this),
             value = _self.val();
-        $('.w3w-logo', embed_code).attr('class', 'w3w-logo').addClass(value).attr('style', '');
+      $('.w3w-logo', embed_code).attr('class', 'w3w-logo').addClass(value).attr('style', '');
+      $('.w3w-logo-slashes', embed_code).attr('class', 'w3w-logo-slashes').addClass(value).attr('style', '');
 
         if (value == 'colorpicker') {
             $('.jscolor-hider').slideDown('300');
@@ -113,7 +114,8 @@ if ($('#embed-generator').length) {
     //color picker
     var color_update = function(jscolor) {
         // 'jscolor' instance can be used as a string
-        $('.w3w-logo', embed_code).css('color', '#' + jscolor);
+      $('.w3w-logo', embed_code).css('color', '#' + jscolor);
+      $('.w3w-logo-slashes', embed_code).css('color', '#' + jscolor);
 
         generateCode();
     }

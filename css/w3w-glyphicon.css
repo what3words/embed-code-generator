@@ -17,6 +17,16 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.w3w-logo-slashes {
+  display: inline-block;
+  font: normal normal normal 14px/1 "w3w-font";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 16px;
+}
+
 .w3w-logo:before {
     content: "\e800";
 }
@@ -113,6 +123,9 @@
     margin-right: 5px;
     vertical-align: middle;
 }
+.w3w-embed .w3w-address .w3w-logo-slashes {
+  vertical-align: middle;
+}
 
 .w3w-link-to-mapsite, .w3w-link-to-mapsite:hover {
     text-decoration: none;
@@ -139,6 +152,11 @@
 .w3w-embed.w3w-medium .w3w-logo {
     font-size: 30px;
 }
+.w3w-embed.w3w-medium .w3w-logo-slashes {
+  width: 26px;
+  position: relative;
+  top: 1px;
+}
 
 .w3w-embed.w3w-medium .w3w-address {
     font-size: 24px;
@@ -155,6 +173,11 @@
     font-size: 38px;
     margin-right: 10px;
     margin-top: -2px;
+}
+.w3w-embed.w3w-large .w3w-logo-slashes {
+  width: 34px;
+  position: relative;
+  top: 1px;
 }
 
 .w3w-embed.w3w-large .w3w-address {
